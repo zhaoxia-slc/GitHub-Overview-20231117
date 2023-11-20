@@ -5,10 +5,10 @@ on:
 
 jobs:
   firstjob:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: firstJob script
-        shell: cmd
+        shell: bash
         run: echo Hello World! THis is the first job
 
   secondJob:
