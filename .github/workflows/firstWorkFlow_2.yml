@@ -10,6 +10,18 @@ jobs:
       - name: firstJob script
         shell: bash
         run: echo Hello World! THis is the first job
+      - name: checkout the repository
+        uses: actions/checkout@v4.1.1
+      - name: greet a user with the hello world function
+        id: greetings
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: 'Paul'
+      - name: the greeting time
+        run: |
+          echo "The time of the greeting was s: ${{ steps.greetings.outputs.time }}"
+          
+        
 
   secondJob:
     runs-on: ubuntu-latest
